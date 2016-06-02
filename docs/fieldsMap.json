@@ -1,0 +1,29 @@
+{
+"Auteur" : "identifiedBy",
+"N°Famille" : "familly_ref",
+"Famille" : "familly",
+"N°Genre" : "genus_ref",
+"N°Espèce" : "species_ref",
+"Genre" : "genus",
+"Espèce" : "species",
+"date récolte" : "record_date_note",
+"Auteur" : "author",
+"N° scan" : "scan_num",
+"Subsp." : "subspecies",
+"Nb spécimens" : "specimen_count",
+"Partie conservée" : "material_organ",
+"Intégrité" : "material_integrity",
+"Etat" : "material_state",
+"Dpt" : "province_code",
+"Nom Dpt" : "province",
+"Commune" : "municipality",
+"Lieu dit" : "locality",
+"Lieu récolte" : "sampling_location",
+"Habitat" : "habitat",
+"remarques" : "remarks_1",
+"remarques perso" : "remarks_2",
+"Nom latin" : "taxon",
+"extras": [
+	'latitude', 'longitude', 'sheet'
+	]
+} 
