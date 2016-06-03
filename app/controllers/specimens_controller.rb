@@ -4,4 +4,12 @@ class SpecimensController < ApplicationController
 
   def show
   end
+
+  def create
+    
+  end
+
+  protected
+
+  
 end

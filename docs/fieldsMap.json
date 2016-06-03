@@ -1,5 +1,5 @@
 {
-"Auteur" : "identifiedBy",
+"Collecteur" : "identifiedBy",
 "N°Famille" : "familly_ref",
 "Famille" : "familly",
 "N°Genre" : "genus_ref",
@@ -26,4 +26,60 @@
 "extras": [
 	'latitude', 'longitude', 'sheet'
 	]
-} 
+}
+
+{
+"Collecteur" => "identifiedBy",
+"N°Famille" => "familly_ref",
+"Famille" => "familly",
+"N°Genre" => "genus_ref",
+"N°Espèce" => "species_ref",
+"Genre" => "genus",
+"Espèce" => "species",
+"date récolte" => "record_date_note",
+"Auteur" => "author",
+"N° scan" => "scan_num",
+"Subsp." => "subspecies",
+"Nb spécimens" => "specimen_count",
+"Partie conservée" => "material_organ",
+"Intégrité" => "material_integrity",
+"Etat" => "material_state",
+"Dpt" => "province_code",
+"Nom Dpt" => "province",
+"Commune" => "municipality",
+"Lieu dit" => "locality",
+"Lieu récolte" => "sampling_location",
+"Habitat" => "habitat",
+"remarques" => "remarks_1",
+"remarques perso" => "remarks_2",
+"Nom latin" => "taxon"
+}
+{"Collecteur" => "identifiedBy", "N°Famille" => "familly_ref", "Famille" => "familly", "N°Genre" => "genus_ref", "N°Espèce" => "species_ref", "Genre" => "genus", "Espèce" => "species", "date récolte" => "record_date_note", "Auteur" => "author", "N° scan" => "scan_num", "Subsp." => "subspecies", "Nb spécimens" => "specimen_count", "Partie conservée" => "material_organ", "Intégrité" => "material_integrity", "Etat" => "material_state", "Dpt" => "province_code", "Nom Dpt" => "province", "Commune" => "municipality", "Lieu dit" => "locality", "Lieu récolte" => "sampling_location", "Habitat" => "habitat", "remarques" => "remarks_1", "remarques perso" => "remarks_2", "Nom latin" => "taxon"}
+{
+identifiedBy =>  "Collecteur",
+familly_ref: "N°Famille",
+familly: "Famille",
+genus_ref: "N°Genre",
+species_ref: "N°Espèce",
+genus: "Genre",
+species: "Espèce",
+record_date_note: "date récolte",
+author: "Auteur",
+scan_num: "N° scan",
+subspecies: "Subsp.",
+specimen_count: "Nb spécimens",
+material_organ: "Partie conservée",
+material_integrity: "Intégrité",
+material_state: "Etat",
+province_code: "Dpt",
+province: "Nom Dpt",
+municipality: "Commune",
+locality: "Lieu dit",
+sampling_location: "Lieu récolte",
+habitat: "Habitat",
+remarks_1: "remarques",
+remarks_2: "remarques perso",
+taxon: "Nom latin"
+}
+
+{identifiedBy: "Collecteur", familly_ref: "N°Famille", familly: "Famille", genus_ref: "N°Genre", species_ref: "N°Espèce", genus: "Genre", species: "Espèce", record_date_note: "date récolte", author: "Auteur", scan_num: "N° scan", subspecies: "Subsp.", specimen_count: "Nb spécimens", material_organ: "Partie conservée", material_integrity: "Intégrité", material_state: "Etat", province_code: "Dpt", province: "Nom Dpt", municipality: "Commune", locality: "Lieu dit", sampling_location: "Lieu récolte", habitat: "Habitat", remarks_1: "remarques", remarks_2: "remarques perso", taxon: "Nom latin"}

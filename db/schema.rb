@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160602131926) do
+ActiveRecord::Schema.define(version: 20160602220656) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,21 +33,20 @@ ActiveRecord::Schema.define(version: 20160602131926) do
     t.string   "subspecies"
     t.integer  "specimen_count"
     t.string   "material_organ"
-    t.integer  "material_integrity"
-    t.integer  "material_state"
+    t.string   "material_integrity"
+    t.string   "material_state"
     t.string   "province_code"
     t.string   "province"
     t.string   "municipality"
     t.string   "locality"
     t.string   "sampling_location"
-    t.string   "latitude"
-    t.string   "float"
-    t.string   "longitude"
     t.string   "habitat"
     t.string   "remarks_1"
     t.string   "remarks_2"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
 end
