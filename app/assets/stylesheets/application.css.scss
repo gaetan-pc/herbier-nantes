@@ -12,4 +12,17 @@
  *
  *= require_tree .
  *= require_self
+ *= require foundation_and_overrides
+
  */
+
+ .paper-bg {
+ 	height: 100vh;
+	background: image-url('paper-bg.png') repeat;
+ }
+
+ .darkleather-bg {
+ 	height: 50vh;
+	background: image-url('dark_leather.png') repeat;
+	color:  white;
+ }

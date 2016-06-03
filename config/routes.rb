@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'specimens/index'
+  root :to => "specimens#index"
 
-  get 'specimens/show'
+  resources :specimens, only: [:index, :show]
 
   mount Riiif::Engine => '/image-service', as: 'riiif'
 

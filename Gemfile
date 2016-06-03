@@ -32,6 +32,9 @@ gem 'jbuilder', '~> 2.0'
 # Use Kaminari for pagination
 gem 'kaminari'
 
+#Use Foundation layout
+gem 'foundation-rails'
+
 # Use Figaro to manage config vars
 gem 'figaro'
 
