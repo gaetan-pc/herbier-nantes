@@ -1,6 +1,10 @@
 class SpecimensController < ApplicationController
   def index
-    @specimens = Specimen.page(1).per(25)
+    if params[:q].present?
+      @specimens = Specimen.search(params[:q])
+    else
+      @specimens = []
+    end
   end
 
   def show
