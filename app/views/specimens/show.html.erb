@@ -1,5 +1,7 @@
 <div class="row">
-  <div class="small-6 columns paper-bg">Planche ici!</div>
+  <div class="small-6 columns paper-bg">
+  	<div id="map"></div>
+  </div>
   <div class="small-6 columns darkleather-bg">
   	<h1>Données descriptives</h1>
   	<p><%= @specimen.id %></p>
@@ -7,4 +9,12 @@
 	<p><%= @specimen.taxon %></p>
   </div>
 </div>
+
+<script>
+	var map = L.map('map', {
+	  center: [0, 0],
+	  crs: L.CRS.Simple,
+	  zoom: 0,
+	}).addLayer(L.tileLayer.iiif('http://herbier-nantes.dev/image-service/<%= @specimen.scan_num %>/info.json'));
+</script>
 

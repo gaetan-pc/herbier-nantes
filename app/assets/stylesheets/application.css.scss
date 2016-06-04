@@ -16,6 +16,11 @@
 
  */
 
+ html, body, #map{
+  height: 100%;
+  margin: 0;
+}
+
  .paper-bg {
  	height: 100vh;
 	background: image-url('paper-bg.png') repeat;
