@@ -46,6 +46,7 @@ gem 'carrierwave'
 gem 'carrierwave-base64' #need to bundle install
 gem 'fog'
 gem 'mini_magick'
+gem 'rmagick'
 
 # Image tile service following IIIF standards
 gem 'riiif'

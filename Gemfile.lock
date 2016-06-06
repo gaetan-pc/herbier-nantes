@@ -312,6 +312,7 @@ GEM
       trollop
     riiif (0.2.4)
       rails (> 3.2.0)
+    rmagick (2.15.4)
     rspec (3.4.0)
       rspec-core (~> 3.4.0)
       rspec-expectations (~> 3.4.0)
@@ -405,6 +406,7 @@ DEPENDENCIES
   rails (= 4.2.1)
   rails_12factor
   riiif
+  rmagick
   rspec-rails
   rspec_api_documentation
   sass-rails (~> 5.0)
