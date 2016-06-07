@@ -41,7 +41,7 @@
 	  crs: L.CRS.Simple,
 	  zoom: 0,
 	 });
-  L.tileLayer.iiif('http://herbier-nantes.dev/image-service/<%= @specimen.scan_num %>/info.json',{
+  L.tileLayer.iiif('http://herbier-nantes.dev/image-service/<%= @specimen.scan_num.parameterize  %>/info.json',{
     attribution: "Ville de Nantes",
     maxZoom: 7
   }).addTo(sheet);
