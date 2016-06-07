@@ -56,6 +56,9 @@ gem 'riiif'
 gem 'geocoder'
 gem 'geokit-rails'
 
+#ReactJS
+gem 'react-rails'
+
 #Console
 gem 'pry-byebug', platform: [:ruby_20]
 gem 'hirb'

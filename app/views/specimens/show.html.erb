@@ -1,20 +1,31 @@
-<div class="row">
-  <div class="small-6 columns paper-bg">
-  	<div id="map"></div>
+<div class="row collapse">
+  <div class="small-6 columns herbarium-sheet">
+  	<div id="sheet"></div>
   </div>
-  <div class="small-6 columns darkleather-bg">
-  	<h1>Données descriptives</h1>
-  	<p><%= @specimen.id %></p>
-  	<p><%= @specimen.scan_num %></p>
-	<p><%= @specimen.taxon %></p>
+  <div class="small-6 columns">
+    <div class=paper-bg>
+      <h1>Données descriptives</h1>
+      <p><%= @specimen.id %></p>
+      <p><%= @specimen.scan_num %></p>
+      <p><%= @specimen.taxon %></p>
+    </div>
+    <div id=map></div>
   </div>
+  
 </div>
 
 <script>
-	var map = L.map('map', {
+	var sheet = L.map('sheet', {
 	  center: [0, 0],
 	  crs: L.CRS.Simple,
 	  zoom: 0,
-	}).addLayer(L.tileLayer.iiif('http://herbier-nantes.dev/image-service/<%= @specimen.scan_num %>/info.json'));
+	 }).addLayer(L.tileLayer.iiif('http://herbier-nantes.dev/image-service/<%= @specimen.scan_num %>/info.json'));
+
+  var map = L.map('map').setView([<%= @specimen.latitude %>, <%= @specimen.longitude %>], 13);
+  L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+    attribution: 'Data \u00a9 <a href="http://www.openstreetmap.org/copyright"> OpenStreetMap Contributors </a> Tiles \u00a9 HOT',
+    maxZoom: 18
+  }).addTo(map);
+  var specimenMarker = L.marker([<%= @specimen.latitude %>, <%= @specimen.longitude %>]).addTo(map);
 </script>
 
