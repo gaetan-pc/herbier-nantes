@@ -1,4 +1,5 @@
 require 'csv'
+require 'fileutils'
 
 namespace :specimens do 
 
@@ -46,9 +47,29 @@ namespace :specimens do
     puts "Import de #{counter} données de catalog."
   end
 
+  desc "Create new records when scan_num duplicates are present"
+  task clean_scan_dup: :environment do
+    sd = Specimen.with_scan_dup
+    sd.each do |s|
+      s.scan_num.split(' ; ').each do |scan|
+        new_s = s.dup
+        new_s.scan_num = scan
+        new_s.save!
+        puts "New record with ID #{new_s.id} created from Specimen with ID #{s.id}"
+      end
+      puts "Going to destroy record with duplicates"
+      s.destroy
+    end
+  end
+
   desc "Upload herbarium sheet previews"
   task upload_sheet: :environment do
-    #TODOs
+    src = ENV['SRC']
+    dest = ENV['DEST']
+    path = Pathname.new(src)
+    Dir.glob("#{src}/*.jpg").each do |image_file|
+      # FileUtils.mv('/tmp/your_file', '/opt/new/location/your_file')
+      puts "#{File.basename(image_file)} do query '#{File.basename(image_file, ".jpg")}' with path #{image_file}"
+    end
   end
-  
 end
