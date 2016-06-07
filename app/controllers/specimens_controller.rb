@@ -1,7 +1,7 @@
 class SpecimensController < ApplicationController
   def index
     if params[:q].present?
-      @specimens = Specimen.search(params[:q])
+      @specimens = Specimen.search(params[:q], limit: 20)
     else
       @specimens = []
     end

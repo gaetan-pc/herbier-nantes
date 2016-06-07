@@ -1,15 +1,36 @@
-<div class="row collapse">
-  <div class="small-6 columns herbarium-sheet">
-  	<div id="sheet"></div>
+<div class="app-bar" style="position: absolute;">
+  <%= image_tag "parcs_logo_webrond.png", height: '80', width: '80'%>
+</div>
+<div class="row collapse" style="padding-top: 90px;">
+  <div class="small-12 medium-6 large-5 columns herbarium-sheet">
+  	<div id="sheet" style="height: 100vh;"></div>
   </div>
-  <div class="small-6 columns">
-    <div class=paper-bg>
-      <h1>Données descriptives</h1>
-      <p><%= @specimen.id %></p>
-      <p><%= @specimen.scan_num %></p>
-      <p><%= @specimen.taxon %></p>
+  <div class="small-12 medium-6 large-7 columns">
+    <div id="sheet-data" class="paper-bg">
+      <h1><%= @specimen.taxon %></h1>
+      <div class="sheet-label">Identifiant</div>
+      <div class="sheet-value"><%= @specimen.scan_num %></div>
+
+      <div class="sheet-label">Famille botanique</div>
+      <div class="sheet-value"><i><%= @specimen.familly %></i></div>
+
+      <div class="sheet-label">Collecté par</div>
+      <div class="sheet-value"><%= @specimen.identifiedBy %></div>
+
+      <div class="sheet-label">Date de collecte</div>
+      <div class="sheet-value"><%= @specimen.record_date_note %></div>
+      
+      <div class="sheet-label">Organes collectés</div>
+      <div class="sheet-value"><%= @specimen.material_organ %></div>
+
+      <div class="sheet-label">Lieu de collecte</div>
+      <div class="sheet-value"><%= @specimen.location %></div>
+      <div class="sheet-value" style="font-weight: normal;"><%= @specimen.sampling_location %></div>
+      <div class="sheet-value" style="font-weight: normal;"><%= @specimen.habitat %></div>
+      <br/>
     </div>
-    <div id=map></div>
+
+    <div id="map"></div>
   </div>
   
 </div>
@@ -19,7 +40,11 @@
 	  center: [0, 0],
 	  crs: L.CRS.Simple,
 	  zoom: 0,
-	 }).addLayer(L.tileLayer.iiif('http://herbier-nantes.dev/image-service/<%= @specimen.scan_num %>/info.json'));
+	 });
+  L.tileLayer.iiif('http://herbier-nantes.dev/image-service/<%= @specimen.scan_num %>/info.json',{
+    attribution: "Ville de Nantes",
+    maxZoom: 7
+  }).addTo(sheet);
 
   var map = L.map('map').setView([<%= @specimen.latitude %>, <%= @specimen.longitude %>], 13);
   L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
