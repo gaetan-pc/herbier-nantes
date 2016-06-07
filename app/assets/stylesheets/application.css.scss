@@ -16,7 +16,29 @@
 
  */
 
- html, body, #sheet{
+ @font-face {
+    font-family: 'birds_of_paradiseregular';
+    src: url('birds_of_paradise__personal_use_only-webfont.woff2') format('woff2'),
+         url('birds_of_paradise__personal_use_only-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+ .app-bar {
+  color: white;
+  width: 100%;
+  height: 90px;
+  background: rgba(0, 0, 0, 0.85);
+  position:fixed;
+  top: 0;
+  transition: box-shadow 0.2s;
+}
+.app-bar-scrolled {
+  box-shadow: 0 10px 8px -8px rgba(0,0,0,.7);
+}
+
+ #sheet{
   height: 100%;
   margin: 0;
 }
@@ -36,7 +58,7 @@
 
 
  .darkleather-bg {
- 	height: 50vh;
-	background: image-url('dark_leather.png') repeat;
-	color:  white;
+ 	height: 400px;
+	background: image-url('reddark_leather.png') repeat;
+	color:  #f8c43a;
  }

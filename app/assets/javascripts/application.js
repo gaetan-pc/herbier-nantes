@@ -20,3 +20,17 @@
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+
+var  tb = $('.app-bar');
+    tbs = "app-bar-scrolled";
+
+$(window).scroll(function() {
+  console.log("init scroll watcher");
+  if($(this).scrollTop()) {
+    tb.addClass(tbs);
+    console.log("scrolling");
+  } else {
+    tb.removeClass(tbs);
+    console.log("not scrolling -remove class");
+  }
+});
