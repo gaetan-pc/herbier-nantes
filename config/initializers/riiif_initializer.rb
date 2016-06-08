@@ -1,6 +1,6 @@
 # Riiif::Image.file_resolver.base_path = Rails.root.join('storage','herbarium').to_s
-Riiif::not_found_image = Rails.root.join('storage','herbarium','default.jpg').to_s
-Riiif::Image.new('no_image', Riiif::File.new(Riiif.not_found_image))
+# Riiif::not_found_image = Rails.root.join('storage','herbarium','default.jpg').to_s
+# Riiif::Image.new('no_image', Riiif::File.new(Riiif.not_found_image))
 
 #HTTP File Resolver
 Riiif::Image.file_resolver = Riiif::HTTPFileResolver.new

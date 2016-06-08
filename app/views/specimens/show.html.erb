@@ -1,5 +1,5 @@
 <div class="app-bar" style="position: absolute;">
-  <%= image_tag "parcs_logo_webrond.png", height: '80', width: '80'%>
+  <%= image_tag "parcs_logo_webrond.png", height: '60', width: '60'%>
 </div>
 <div class="row collapse" style="padding-top: 80px;">
   <div class="small-12 medium-6 large-5 columns herbarium-sheet">
@@ -13,12 +13,17 @@
 
       <div class="sheet-label">Famille botanique</div>
       <div class="sheet-value"><i><%= @specimen.familly %></i></div>
-
-      <div class="sheet-label">Collecté par</div>
-      <div class="sheet-value"><%= @specimen.identifiedBy %></div>
-
-      <div class="sheet-label">Date de collecte</div>
-      <div class="sheet-value"><%= @specimen.record_date_note %></div>
+      
+      <div class="row collapse" style="margin-right: 35px;">
+        <div class="medium-6 columns">
+          <div class="sheet-label">Collecté par</div>
+          <div class="sheet-value"><%= @specimen.identifiedBy %></div>
+        </div>
+        <div class="medium-6 columns">
+          <div class="sheet-label">Date de collecte</div>
+          <div class="sheet-value"><%= @specimen.record_date_note %></div>
+        </div>
+      </div>
       
       <div class="sheet-label">Organes collectés</div>
       <div class="sheet-value"><%= @specimen.material_organ %></div>
@@ -41,7 +46,7 @@
 	  crs: L.CRS.Simple,
 	  zoom: 0,
 	 });
-  L.tileLayer.iiif('http://herbier-nantes.dev/image-service/<%= @specimen.scanid %>/info.json',{
+  L.tileLayer.iiif('http://localhost:3000/image-service/<%= @specimen.scanid %>/info.json',{
     attribution: "Ville de Nantes",
     maxZoom: 7
   }).addTo(sheet);

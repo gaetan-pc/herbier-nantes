@@ -35,6 +35,13 @@ body {
   box-shadow: 0 10px 8px -8px rgba(0,0,0,.7);
 }
 
+.darkleather-header {
+    width: 100%;
+    height: 275px;
+    background: image-url('reddark_leather.png') repeat;
+    color:  #f8c43a;
+}
+
 .app-title {
   width: 100%;
   padding: 80px 50px 0 50px;
@@ -73,6 +80,7 @@ body {
 
     .card-description {
         padding: 5px;
+        height: 125px;
         margin-left: 10px;
         color: grey;
         font-size: 0.8em;
@@ -86,17 +94,12 @@ body {
     margin: 15px;
 }
 
-.darkleather-header {
-    width: 100%;
-    height: 33vh;
-    background: image-url('reddark_leather.png') repeat;
-    color:  #f8c43a;
-}
+
 
 // SHOW
 
 .herbarium-sheet {
-    height: 90vh;
+    height: 85vh;
     background-color: grey;
 }
 #sheet{
