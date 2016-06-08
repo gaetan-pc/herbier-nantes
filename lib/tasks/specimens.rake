@@ -70,6 +70,21 @@ namespace :specimens do
     Dir.glob("#{src}/*.jpg").each do |image_file|
       # FileUtils.mv('/tmp/your_file', '/opt/new/location/your_file')
       puts "#{File.basename(image_file)} do query '#{File.basename(image_file, ".jpg")}' with path #{image_file}"
+      basename = File.basename(image_file, ".jpg")
+      filename = File.basename(image_file)
+      s = Specimen.find_with_scan(basename).first
+      if s.present?
+        puts "Find specimen #{s.taxon} for scan #{basename}!"
+        s.sheet = File.open(image_file)
+        s.save!
+        src_file = [src, filename].join('/')
+        dest_file = [dest, filename].join('/')
+        FileUtils.mv(src_file.to_s, dest_file.to_s)
+        puts "Original file uploaded... Moving to #{dest_file}"
+      else
+        puts "No specimen found for scan #{basename}..."
+      end
+      
     end
   end
 end

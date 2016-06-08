@@ -46,7 +46,7 @@
     maxZoom: 7
   }).addTo(sheet);
 
-  var map = L.map('map').setView([<%= @specimen.latitude %>, <%= @specimen.longitude %>], 13);
+  var map = L.map('map').setView([<%= @specimen.latitude || 47.2197866 %>, <%= @specimen.longitude || -1.5451327%>], 13);
   L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
     attribution: 'Data \u00a9 <a href="http://www.openstreetmap.org/copyright"> OpenStreetMap Contributors </a> Tiles \u00a9 HOT',
     maxZoom: 18

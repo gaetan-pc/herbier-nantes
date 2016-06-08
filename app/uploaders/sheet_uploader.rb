@@ -29,7 +29,7 @@ class SheetUploader < CarrierWave::Uploader::Base
   # end
 
   process :rotate => [90]
-  process :resize_to_limit => [3200, 5000]
+  process :resize_to_limit => [2500, 4000]
   process :lower_density => [150]
 
 
@@ -67,7 +67,7 @@ class SheetUploader < CarrierWave::Uploader::Base
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
   def filename
-    model.scanid if original_filename
+    "#{model.scanid}.jpg" if original_filename
   end
 
 end

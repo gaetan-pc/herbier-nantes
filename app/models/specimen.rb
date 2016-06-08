@@ -16,7 +16,7 @@ class Specimen < ActiveRecord::Base
   end
 
   def scanid
-    scan_num.gsub(/[())]/, ':')
+    scan_num.gsub(/[())]/, '')
   end
 
   def self.find_with_scan(query)
