@@ -19,6 +19,20 @@ class Specimen < ActiveRecord::Base
     scan_num.gsub(/[())]/, '')
   end
 
+  def description
+    desc = "Specimen collecté "
+    if identifiedBy?
+      desc += "par #{identifiedBy} "
+    end
+    if record_date_note? && record_date_note != "s.d"
+      desc += "le #{record_date_note} "
+    end
+    if municipality?
+      desc += "à #{municipality.gsub(/[())]/, '')}, #{province || "France"}."
+    end
+    desc
+  end
+
   def self.find_with_scan(query)
     where do
       (scan_num == "#{query}")
