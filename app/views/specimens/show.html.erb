@@ -1,5 +1,12 @@
 <div class="app-bar" style="position: absolute;">
-  <%= image_tag "parcs_logo_webrond.png", height: '60', width: '60'%>
+  <div class="row collapse">
+    <div class="medium-1 columns">
+      <%= image_tag "parcs_logo_webrond.png", height: '60', width: '60'%>
+    </div>
+    <div class="medium-3 columns end">
+      <%= link_to "<< Retour à l'accueil", root_path %>
+    </div>
+  </div>
 </div>
 <div class="row collapse" style="padding-top: 80px;">
   <div class="small-12 medium-6 large-5 columns herbarium-sheet">
@@ -46,7 +53,7 @@
 	  crs: L.CRS.Simple,
 	  zoom: 0,
 	 });
-  L.tileLayer.iiif('http://localhost:3000/image-service/<%= @specimen.scanid %>/info.json',{
+  L.tileLayer.iiif('https://herbier-nantes.herokuapp.com/image-service/<%= @specimen.scanid %>/info.json',{
     attribution: "Ville de Nantes",
     maxZoom: 7
   }).addTo(sheet);
